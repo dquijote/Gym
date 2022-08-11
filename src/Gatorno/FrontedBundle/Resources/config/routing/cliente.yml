@@ -1,0 +1,46 @@
+cliente:
+    path:     /
+    defaults: { _controller: "FrontedBundle:Cliente:index" }
+
+cliente_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:Cliente:show" }
+
+cliente_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:Cliente:new" }
+
+cliente_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:Cliente:create" }
+    requirements: { _method: post }
+
+cliente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:Cliente:edit" }
+
+cliente_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:Cliente:update" }
+    requirements: { _method: post|put }
+
+cliente_despues_update:
+    path:     /{id}/despues/update
+    defaults: { _controller: "FrontedBundle:Cliente:afterEdith" }
+
+cliente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:Cliente:delete" }
+    requirements: { _method: post|delete }
+
+cliente_buscar:
+    path:     /buscar
+    defaults: { _controller: "FrontedBundle:Cliente:buscar" }
+
+confirm_delete:
+     path:     /{id}/confirmar/delete
+     defaults: { _controller: "FrontedBundle:Cliente:confirmDelete" }
+
+cliente_reporte:
+    path:     /reporte
+    defaults: { _controller: "FrontedBundle:Cliente:clienteFiltro" }

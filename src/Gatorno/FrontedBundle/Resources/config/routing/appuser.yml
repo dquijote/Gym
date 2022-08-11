@@ -1,0 +1,30 @@
+user:
+    path:     /
+    defaults: { _controller: "FrontedBundle:appUser:index" }
+
+user_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:appUser:show" }
+
+user_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:appUser:new" }
+
+user_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:appUser:create" }
+    requirements: { _method: post }
+
+user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:appUser:edit" }
+
+user_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:appUser:update" }
+    requirements: { _method: post|put }
+
+user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:appUser:delete" }
+

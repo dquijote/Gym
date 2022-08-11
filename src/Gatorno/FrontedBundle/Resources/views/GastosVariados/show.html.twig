@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>GastosVariados</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ entity.fecha|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Monto</th>
+                <td>{{ entity.monto }}</td>
+            </tr>
+            <tr>
+                <th>Montivo</th>
+                <td>{{ entity.montivo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('gastos_variados') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('gastos_variados_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

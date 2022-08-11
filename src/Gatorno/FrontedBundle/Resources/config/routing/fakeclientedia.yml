@@ -1,0 +1,30 @@
+count_dia:
+    path:     /
+    defaults: { _controller: "FrontedBundle:FakeClienteDia:index" }
+
+count_dia_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:FakeClienteDia:show" }
+
+count_dia_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:FakeClienteDia:new" }
+
+count_dia_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:FakeClienteDia:create" }
+    requirements: { _method: post }
+
+count_dia_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:FakeClienteDia:edit" }
+
+count_dia_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:FakeClienteDia:update" }
+    requirements: { _method: post|put }
+
+count_dia_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:FakeClienteDia:delete" }
+    requirements: { _method: post|delete }

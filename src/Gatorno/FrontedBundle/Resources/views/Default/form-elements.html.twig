@@ -1,0 +1,504 @@
+{% extends '::frontedBase.html.twig' %}
+
+
+    {% block stylesheet %}
+
+    <link rel="stylesheet" type="text/css" href="{{  asset('css/libs/font-awesome.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{  asset('css/libs/nanoscroller.css')}}"/>
+
+    <link rel="stylesheet" type="text/css" href="{{  asset('css/compiled/theme_styles.css')}}"/>
+
+    <link rel="stylesheet" href="{{  asset('css/libs/datepicker.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{  asset('css/libs/daterangepicker.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{  asset('css/libs/bootstrap-timepicker.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{  asset('css/libs/select2.css')}}" type="text/css"/>
+
+    <link type="image/x-icon" href="{{ asset('img/pricing-star.png') }}" rel="shortcut icon"/> {#favicon#}
+    {% endblock %}
+
+{% block body %}
+<div id="theme-wrapper">
+
+<div id="page-wrapper" class="container">
+<div class="row">
+<div id="nav-col">
+<section id="col-left" class="col-left-nano">
+<div id="col-left-inner" class="col-left-nano-content">
+
+<div class="collapse navbar-collapse navbar-ex1-collapse" id="sidebar-nav">
+
+</div>
+</div>
+</section>
+<div id="nav-col-submenu"></div>
+</div>
+<div id="content-wrapper">
+<div class="row">
+<div class="col-lg-12">
+<div class="row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li><a href="form-elements.html#">Home</a></li>
+            <li class="active"><span>Form Elements</span></li>
+        </ol>
+        <h1>Form Elements</h1>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-box">
+            <header class="main-box-header clearfix">
+                <h2>Horizontal form</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <div class="checkbox-nice">
+                                <input type="checkbox" id="remember-me2" checked="checked"/>
+                                <label for="remember-me2">
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" class="btn btn-success">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="main-box">
+            <header class="main-box-header clearfix">
+                <h2>Input groups</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="examplePrepend">Prepend</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <input type="text" class="form-control" id="examplePrepend" placeholder="prepend text here">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleAppend">Append</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="exampleAppend">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleAppPre">Append and Prepend</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control" id="exampleAppPre">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exmaplePrependCheck">Prepend checkbox</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                            <input type="checkbox">
+                            </span>
+                            <input type="text" class="form-control" id="exmaplePrependCheck">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleRadio">Prepend radio</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                            <input type="radio">
+                            </span>
+                            <input type="text" class="form-control" id="exampleRadio">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exmaplePrependButton">Prepend button</label>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">Go!</button>
+                            </span>
+                            <input type="text" class="form-control" id="exmaplePrependButton">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="examplePrependDropdown">Prepend button dropdown</label>
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="form-elements.html#">Action</a></li>
+                                    <li><a href="form-elements.html#">Another action</a></li>
+                                    <li><a href="form-elements.html#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="form-elements.html#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <input type="text" class="form-control" id="examplePrependDropdown">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="main-box">
+            <header class="main-box-header clearfix">
+                <h2>Masked inputs</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="maskedDate">Date</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control" id="maskedDate">
+                        </div>
+                        <span class="help-block">ex. 99/99/9999</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="maskedPhone">Phone</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                            <input type="text" class="form-control" id="maskedPhone">
+                        </div>
+                        <span class="help-block">ex. (999) 999-9999</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="maskedPhoneExt">Phone + Ext</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-mobile-phone"></i></span>
+                            <input type="text" class="form-control" id="maskedPhoneExt">
+                        </div>
+                        <span class="help-block">ex. (999) 999-9999? x99999</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="maskedTax">Tax ID</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                            <input type="text" class="form-control" id="maskedTax">
+                        </div>
+                        <span class="help-block">ex. 99-9999999</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="maskedSsn">SSN</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-male"></i></span>
+                            <input type="text" class="form-control" id="maskedSsn">
+                        </div>
+                        <span class="help-block">ex. 999-99-9999</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-box">
+            <header class="main-box-header clearfix">
+                <h2>Switches</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="pull-left">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                                <label class="onoffswitch-label" for="myonoffswitch">
+                                    <div class="onoffswitch-inner"></div>
+                                    <div class="onoffswitch-switch"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="pull-left">
+                            <div class="onoffswitch onoffswitch-danger">
+                                <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
+                                <label class="onoffswitch-label" for="myonoffswitch2">
+                                    <div class="onoffswitch-inner"></div>
+                                    <div class="onoffswitch-switch"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="pull-left">
+                            <div class="onoffswitch onoffswitch-warning">
+                                <input type="checkbox" name="onoffswitch3" class="onoffswitch-checkbox" id="myonoffswitch3" checked>
+                                <label class="onoffswitch-label" for="myonoffswitch3">
+                                    <div class="onoffswitch-inner"></div>
+                                    <div class="onoffswitch-switch"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="pull-left">
+                            <div class="onoffswitch onoffswitch-success">
+                                <input type="checkbox" name="onoffswitch4" class="onoffswitch-checkbox" id="myonoffswitch4" checked>
+                                <label class="onoffswitch-label" for="myonoffswitch4">
+                                    <div class="onoffswitch-inner"></div>
+                                    <div class="onoffswitch-switch"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <br/>
+                        <span class="help-block">
+                        Pure CSS3 On/Off FlipSwitch - you can make your own custom on/off switch
+                        <a href="http://proto.io/freebies/onoff/" target="_blank">here</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-box">
+            <header class="main-box-header clearfix">
+                <h2>Datepickers</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="datepickerDate">Date</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control" id="datepickerDate">
+                                </div>
+                                <span class="help-block">format mm-dd-yyyy</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="datepickerDateRange">Date range</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
+                                    <input type="text" class="form-control" id="datepickerDateRange">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="datepickerDateComponent">Date readonly</label>
+                                <div class="input-group" data-date-format="dd-mm-yyyy">
+                                    <input type="text" class="form-control" id="datepickerDateComponent" readonly>
+                                    <span class="input-group-addon"><i class="fa fa-th"></i></span>
+                                </div>
+                                <span class="help-block">As component.</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="timepicker">Time picker</label>
+                                <div class="input-group input-append bootstrap-timepicker">
+                                    <input type="text" class="form-control" id="timepicker">
+                                    <span class="add-on input-group-addon"><i class="fa fa-clock-o"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-box">
+            <header class="main-box-header clearfix">
+                <h2>Grid sizing</h2>
+            </header>
+            <div class="main-box-body clearfix">
+                <form role="form">
+                    <div class="row">
+                        <div class="form-group col-xs-3">
+                            <input type="text" class="form-control" placeholder=".col-xs-3">
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <input type="text" class="form-control" placeholder=".col-xs-3">
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <input type="text" class="form-control" placeholder=".col-xs-3">
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <input type="text" class="form-control" placeholder=".col-xs-3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-4">
+                            <input type="text" class="form-control" placeholder=".col-xs-4">
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <input type="text" class="form-control" placeholder=".col-xs-4">
+                        </div>
+                        <div class="form-group col-xs-4">
+                            <input type="text" class="form-control" placeholder=".col-xs-4">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+                            <input type="text" class="form-control" placeholder=".col-xs-6">
+                        </div>
+                        <div class="form-group col-xs-6">
+                            <input type="text" class="form-control" placeholder=".col-xs-6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-7">
+                            <input type="text" class="form-control" placeholder=".col-xs-7">
+                        </div>
+                        <div class="form-group col-xs-5">
+                            <input type="text" class="form-control" placeholder=".col-xs-5">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <input type="text" class="form-control" placeholder=".col-xs-12">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<footer id="footer-bar" class="row">
+    <p id="footer-copyright" class="col-xs-12">
+        Powered by Cube Theme.
+    </p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+{% block script %}
+
+<script src="{{  asset('js/demo-skin-changer.js')}}"></script>
+<script src="{{  asset('js/jquery.js')}}"></script>
+<script src="{{  asset('js/bootstrap.js')}}"></script>
+<script src="{{  asset('js/jquery.nanoscroller.min.js')}}"></script>
+<script src="{{  asset('js/demo.js')}}"></script>
+
+<script src="{{  asset('js/jquery.maskedinput.min.js')}}"></script>
+<script src="{{  asset('js/bootstrap-datepicker.js')}}"></script>
+<script src="{{  asset('js/moment.min.js')}}"></script>
+<script src="{{  asset('js/daterangepicker.js')}}"></script>
+<script src="{{  asset('js/bootstrap-timepicker.min.js')}}"></script>
+<script src="{{  asset('js/select2.min.js')}}"></script>
+<script src="{{  asset('js/hogan.js')}}"></script>
+<script src="{{  asset('js/typeahead.min.js')}}"></script>
+<script src="{{  asset('js/jquery.pwstrength.js')}}"></script>
+
+<script src="{{  asset('js/scripts.js')}}"></script>
+<script src="{{  asset('js/pace.min.js')}}"></script>
+{% endblock %}
+
+{% block script_independite %}
+
+<script>
+    $(function($) {
+        //tooltip init
+        $('#exampleTooltip').tooltip();
+
+        //nice select boxes
+        $('#sel2').select2();
+
+        $('#sel2Multi').select2({
+            placeholder: 'Select a Country',
+            allowClear: true
+        });
+
+        //masked inputs
+        $("#maskedDate").mask("99/99/9999");
+        $("#maskedPhone").mask("(999) 999-9999");
+        $("#maskedPhoneExt").mask("(999) 999-9999? x99999");
+        $("#maskedTax").mask("99-9999999");
+        $("#maskedSsn").mask("999-99-9999");
+
+        $("#maskedProductKey").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
+
+        $.mask.definitions['~']='[+-]';
+        $("#maskedEye").mask("~9.99 ~9.99 999");
+
+        //datepicker
+        $('#datepickerDate').datepicker({
+            format: 'mm-dd-yyyy'
+        });
+
+        $('#datepickerDateComponent').datepicker();
+
+        //daterange picker
+        $('#datepickerDateRange').daterangepicker();
+
+        //timepicker
+        $('#timepicker').timepicker({
+            minuteStep: 5,
+            showSeconds: true,
+            showMeridian: false,
+            disableFocus: false,
+            showWidget: true
+        }).focus(function() {
+                    $(this).next().trigger('click');
+                });
+
+        //autocomplete simple
+        $('#exampleAutocompleteSimple').typeahead({
+            prefetch: '/data/countries.json',
+            limit: 10
+        });
+   {#
+        //autocomplete with templating
+        $('#exampleAutocomplete').typeahead({
+            name: 'twitter-oss',
+            prefetch: '/data/repos.json',
+            template: [
+                '<p class="repo-language">{{language}}</p>',
+                '<p class="repo-name">{{name}}</p>',
+                '<p class="repo-description">{{description}}</p>'
+            ].join(''),
+            engine: Hogan
+        });
+#}
+        //password strength meter
+        $('#examplePwdMeter').pwstrength({
+            label: '.pwdstrength-label'
+        });
+
+    });
+</script>
+{% endblock %}

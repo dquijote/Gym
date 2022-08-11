@@ -1,0 +1,15 @@
+prueba_index:
+    path:    /index
+    defaults: { _controller: FrontedBundle:Pruebas:index }
+
+prueba_avanced_table:
+    path:    /avanced-table
+    defaults: { _controller: FrontedBundle:Pruebas:avancedTable }
+
+prueba_fecha:
+    path:    /db
+    defaults: { _controller: FrontedBundle:Pruebas:cambiarBaseDatos }
+
+prueba_morris:
+    path:    /morris
+    defaults: { _controller: FrontedBundle:Pruebas:morris }

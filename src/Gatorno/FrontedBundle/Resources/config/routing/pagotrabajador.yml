@@ -1,0 +1,25 @@
+pago_trabajador:
+    path:     /
+    defaults: { _controller: "FrontedBundle:pagosTrabajador:index" }
+
+pago_trabajador_individual:
+    path:     /individual/{id}
+    defaults: { _controller: "FrontedBundle:pagosTrabajador:individual" }
+
+pago_trabajador_individual_save:
+    path:     /trabajador/individual/save
+    defaults: { _controller: "FrontedBundle:pagosTrabajador:individualSave" }
+
+pago_trabajador_colectivo:
+    path:     /colectivo
+    defaults: { _controller: "FrontedBundle:pagosTrabajador:colectivo" }
+    requirements: { _method: post }
+
+pago_trabajador_atrasado:
+    path:     /atrasado
+    defaults: { _controller: "FrontedBundle:pagosTrabajador:pagoAtrasado" }
+
+pago_trabajador_atrasado_save:
+    path:     /atrasado/guardar
+    defaults: { _controller: "FrontedBundle:pagosTrabajador:pagoAtrasadoSave" }
+    requirements: { _method: post }

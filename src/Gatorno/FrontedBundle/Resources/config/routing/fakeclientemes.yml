@@ -1,0 +1,30 @@
+count:
+    path:     /
+    defaults: { _controller: "FrontedBundle:FakeClienteMes:index" }
+
+count_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:FakeClienteMes:show" }
+
+count_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:FakeClienteMes:new" }
+
+count_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:FakeClienteMes:create" }
+    requirements: { _method: post }
+
+count_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:FakeClienteMes:edit" }
+
+count_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:FakeClienteMes:update" }
+    requirements: { _method: post|put }
+
+count_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:FakeClienteMes:delete" }
+    requirements: { _method: post|delete }

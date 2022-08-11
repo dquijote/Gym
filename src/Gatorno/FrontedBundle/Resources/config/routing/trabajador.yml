@@ -1,0 +1,30 @@
+trabajador:
+    path:     /
+    defaults: { _controller: "FrontedBundle:Trabajador:index" }
+
+trabajador_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:Trabajador:show" }
+
+trabajador_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:Trabajador:new" }
+
+trabajador_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:Trabajador:create" }
+    requirements: { _method: post }
+
+trabajador_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:Trabajador:edit" }
+
+trabajador_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:Trabajador:update" }
+    requirements: { _method: post|put }
+
+trabajador_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:Trabajador:delete" }
+

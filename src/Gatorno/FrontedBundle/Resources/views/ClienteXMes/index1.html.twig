@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+dd
+{% block bodydd -%}
+    <h1>ClienteXMes list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Clientexmes</th>
+                <th>Mes</th>
+                <th>Fechasave</th>
+                <th>Porciento</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('cliente_mes_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entddity.ClienteXMes }}</td>
+                <td>{% if entity.Mes %}{{ entity.Mes|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.FechaSave %}{{ entity.FechaSave|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.porciento }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('cliente_mes_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('cliente_mes_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('cliente_mes_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>FakeClienteMes</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Clientemesmax</th>
+                <td>{{ entity.ClienteMesMax }}</td>
+            </tr>
+            <tr>
+                <th>Clientemesmin</th>
+                <td>{{ entity.ClienteMesMin }}</td>
+            </tr>
+            <tr>
+                <th>Porciento</th>
+                <td>{{ entity.porciento }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('count') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('count_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

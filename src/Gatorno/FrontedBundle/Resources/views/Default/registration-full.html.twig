@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Gym - Gym</title>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        // try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1418570549,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok2v=1613a3a185/"},atok:"2201c5185feed75fde77627ccd0db910",petok:"531fa29dbc1cd1e3482c6f83ec0214aef351ba6e-1418656060-1800",zone:"adbee.technology",rocket:"0",apps:{"ga_key":{"ua":"UA-49262924-2","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok2v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+        //]]>
+    </script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap/bootstrap.min.css') }}"/>
+
+    <script src="{{ asset('js/demo-rtl.js') }}"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/libs/font-awesome.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/libs/nanoscroller.css') }}"/>
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/compiled/theme_styles.css') }}"/>
+
+    <link rel="stylesheet" href="{{  asset('css/libs/datepicker.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{  asset('css/libs/daterangepicker.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{  asset('css/libs/bootstrap-timepicker.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{  asset('css/libs/select2.css')}}" type="text/css"/>
+
+    {#DEL FORM-DROPZONE#}
+    {#<link rel="stylesheet" type="text/css" href="css/libs/dropzone.css">#}
+
+
+    {#<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300|Titillium+Web:200,300,400' rel='stylesheet' type='text/css'>#}
+
+    <link type="image/x-icon" href="{{ asset('img/pricing-star.png') }}" rel="shortcut icon"/> {#favicon#}
+    <!--[if lt IE 9]>
+    <script src="{{ asset('js/html5shiv.js') }}"></script>
+    <script src="{{ asset('js/respond.min.js') }}"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-49262924-2']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        (function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+        /* ]]> */
+    </script>
+</head>
+<body id="login-page-full">
+<div id="login-full-wrapper">
+    <div class="container ">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="login-box">
+                    <div class="row">
+                        <div class="col-xs-12">
+                           {# <header id="login-header">
+                                <div id="login-logo">
+                                    <img src="{{ asset('img/logo.png') }}" alt=""/>
+                                </div>
+                            </header>#}
+
+
+                           {% if registrado is defined and registrado == true %}
+                               {#    <div style="text-align: center" class="alert alert-info"> </div>
+                                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>#}
+                                   {% for mensaje in app.session.flashbag.get('registrado') %}
+                                       <strong style="display: block;color: red; text-align: center">{{ mensaje }} <br/><br/></strong>
+                                   {% endfor %}
+
+
+                           {% endif %}
+
+                            <div  id="login-box-inner">
+
+                                {#==============================#}
+                                <div class="main-box-body clearfix">
+                                   {{ form_start(formulario,{'role':'form','action': path('fronted_registrarSave'),'method':'POST'}) }}
+                                   {#      {{ form_errors(formulario.clave) }}
+                                        <div class="form-group">
+                                            <label for="inputEmail1" class="col-lg-2 control-label">Clave</label>
+                                            <div class="col-lg-10">
+                                                {{ form_widget(formulario.clave,{'attr':
+                                                {'class' : 'form-control',
+                                                'placeholder':'Clave'}
+                                                }) }}
+                                            </div>
+                                        </div>#}
+                                  {# {{ form_errors(formulario.clave) }}
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        {{ form_widget(formulario.clave,{'attr':
+                                        {'class' : 'form-control',
+                                        'placeholder':'Clave'}
+                                        }) }}
+
+                                    </div>
+                                   #}
+
+                                       <div>
+                                       {# <div class="form-group">
+                                            {{ form_errors(formulario.nombre) }}
+                                            <label for="inputEmail1" class="col-lg-2 control-label">Nombre</label>
+                                            <div class="col-lg-10">
+                                                {{ form_widget(formulario.nombre,{'attr':
+                                                {'class' : 'form-control',
+                                                'placeholder':'Nombre'}
+                                                }) }}
+                                            </div>
+                                        </div>#}
+                                           {{ form_errors(formulario.nombre) }}
+                                           <div class="input-group">
+                                               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                               {{ form_widget(formulario.nombre,{'attr':
+                                               {'class' : 'form-control',
+                                               'placeholder':'Nombre'}
+                                               }) }}
+
+                                           </div>
+                                       </div>
+
+                                    {#   <div class="form-group">
+                                            {{ form_errors(formulario.apellidos) }}
+                                            <label for="inputEmail1" class="col-lg-2 control-label">Apellidos</label>
+                                            <div class="col-lg-10">
+                                                {{ form_widget(formulario.apellidos,{'attr':
+                                                {'class' : 'form-control',
+                                                'placeholder':'Apellidos',
+                                                'for':'inputEmail1'}
+                                                }) }}
+                                            </div>
+                                        </div>#}
+                                   {{ form_errors(formulario.apellidos) }}
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        {{ form_widget(formulario.apellidos,{'attr':
+                                        {'class' : 'form-control',
+                                        'placeholder':'Apellidos',
+                                        'for':''}
+                                        }) }}
+                                    </div>
+
+                                     {#   {{ form_errors(formulario.sexo) }}
+                                        <div class="form-group">
+                                            <label for="inputEmail1" class="col-lg-2 control-label">Sexo</label>
+                                            <div class="col-lg-10">
+                                                {{ form_widget(formulario.sexo,{'attr':
+                                                {'class' : 'form-control',
+                                                'placeholder':'Clave'}
+                                                }) }}
+                                            </div>
+                                        </div>
+                                    #}
+                                   {{ form_errors(formulario.sexo) }}
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        {{ form_widget(formulario.sexo,{'attr':
+                                        {'class' : 'form-control',
+                                        'placeholder':''}
+                                        }) }}
+                                    </div>
+                                       {#  {{ form_errors(formulario.tipo) }}
+                                        <div class="form-group">
+                                            <label for="inputEmail1" class="col-lg-2 control-label">Tipo</label>
+                                            <div class="col-lg-10">
+                                                {{ form_widget(formulario.tipo,{'attr':
+                                                {'class' : 'form-control',
+                                                'placeholder':'Clave'}
+                                                }) }}
+                                            </div>
+                                        </div>#}
+                                   {{ form_errors(formulario.tipo) }}
+                                 <div class="input-group">
+                                     <span class="input-group-addon"><i class="fa fa-star"></i></span>
+                                     {{ form_widget(formulario.tipo,{'attr':
+                                     {'class' : 'form-control',
+                                     'placeholder':''}
+                                     }) }}
+                                 </div>
+                                    {#
+                                        {{ form_errors(formulario.costoDeservicio) }}
+                                        <div class="form-group">
+                                            <label for="inputEmail1" class="col-lg-2 control-label">Costo</label>
+                                            <div class="col-lg-10">
+                                                {{ form_widget(formulario.costoDeservicio,{'attr':
+                                                {'class' : 'form-control',
+                                                'placeholder':'Clave'}
+                                                }) }}
+                                            </div>
+                                        </div>
+                                    #}
+
+                                      {#  <div>
+                                            {{ form_errors(formulario.fechaDeIngreso) }}
+                                            <div class="form-group">
+                                                <label for="inputEmail1" class="col-lg-2 control-label">Ingreso</label>
+                                                <div class="input-group col-lg-10">
+                                                    {{ form_widget(formulario.fechaDeIngreso,{'attr':
+                                                    {'class' : 'form-control',
+                                                    'placeholder':'',
+                                                    'id':'maskedDate'}
+                                                    }) }}
+                                                </div>
+                                            </div>
+                                         </div>#}
+                                      {#   <div class="input-group">
+                                             {{ form_errors(formulario.fechaDeIngreso) }}
+                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                             {{ form_widget(formulario.fechaDeIngreso,{'attr':
+                                             {'class' : 'form-control',
+                                             'placeholder':'Fecha',
+                                             'id':''}
+                                             }) }}
+                                         </div>
+                                         #}
+                                    {#    {{ form_errors(formulario.fechaDePago) }}
+                                        <div class="form-group">
+                                            <label for="inputEmail1" class="col-lg-2 control-label">Pago</label>
+                                            <div class="col-lg-10">
+                                                {{ form_widget(formulario.fechaDePago,{'attr':
+                                                {'class' : 'form-control',
+                                                'placeholder':'Fecha de Pago'}
+                                                }) }}
+                                            </div>
+                                        </div>#}
+
+
+                                {#
+                                        {{ form_errors(formulario.servicio) }}
+                                    <div class="form-group">
+                                        <label for="inputEmail1" class="col-lg-2 control-label">servicio</label>
+                                        <div class="col-lg-10">
+                                            {{ form_widget(formulario.servicio,{'attr':
+                                            {'class' : 'form-control',
+                                            'placeholder':'Clave'}
+                                            }) }}
+                                        </div>
+                                    </div>
+                                   {{ form_errors(formulario.servicio) }}
+                                     <div class="input-group">
+                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                         {{ form_widget(formulario.servicio,{'attr':
+                                         {'class' : 'form-control',
+                                         'placeholder':'Servicio'}
+                                         }) }}
+                                     </div>#}
+                                {#
+                                    {{ form_errors(formulario.foto) }}
+                                    <div class="form-group">
+                                        <label for="inputEmail1" class="col-lg-2 control-label">Foto</label>
+                                        <div class="col-lg-10">
+                                            {{ form_widget(formulario.foto,{'attr':
+                                            {'class' : 'form-control',
+                                            'placeholder':''}
+                                            }) }}
+                                        </div>
+                                    </div>#}
+                                   {{ form_errors(formulario.foto) }}
+                                     <div class="input-group">
+                                         <span class="input-group-addon"><i class="fa fa-photo"></i></span>
+                                         {{ form_widget(formulario.foto,{'attr':
+                                         {'class' : 'form-control',
+                                         'placeholder':''}
+                                         }) }}
+                                     </div>
+
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <button type="submit" class="btn btn-success col-xs-12">Registrar</button>
+                                        </div>
+                                    </div>
+
+
+                                    {{ form_end(formulario) }}
+
+
+
+                                {#==============================#}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="config-tool" class="closed">
+    <a id="config-tool-cog">
+        <i class="fa fa-cog"></i>
+    </a>
+    <div id="config-tool-options">
+        <h4>Layout Options</h4>
+        <ul>
+            <li>
+                <div class="checkbox-nice">
+                    <input type="checkbox" id="config-fixed-header"/>
+                    <label for="config-fixed-header">
+                        Fixed Header
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="checkbox-nice">
+                    <input type="checkbox" id="config-fixed-sidebar"/>
+                    <label for="config-fixed-sidebar">
+                        Fixed Left Menu
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="checkbox-nice">
+                    <input type="checkbox" id="config-fixed-footer"/>
+                    <label for="config-fixed-footer">
+                        Fixed Footer
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="checkbox-nice">
+                    <input type="checkbox" id="config-boxed-layout"/>
+                    <label for="config-boxed-layout">
+                        Boxed Layout
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="checkbox-nice">
+                    <input type="checkbox" id="config-rtl-layout"/>
+                    <label for="config-rtl-layout">
+                        Right-to-Left
+                    </label>
+                </div>
+            </li>
+        </ul>
+        <br/>
+        <h4>Skin Color</h4>
+        <ul id="skin-colors" class="clearfix">
+            <li>
+                <a class="skin-changer" data-skin="" data-toggle="tooltip" title="Default" style="background-color: #34495e;">
+                </a>
+            </li>
+            <li>
+                <a class="skin-changer" data-skin="theme-white" data-toggle="tooltip" title="White/Green" style="background-color: #2ecc71;">
+                </a>
+            </li>
+            <li>
+                <a class="skin-changer blue-gradient" data-skin="theme-blue-gradient" data-toggle="tooltip" title="Gradient">
+                </a>
+            </li>
+            <li>
+                <a class="skin-changer" data-skin="theme-turquoise" data-toggle="tooltip" title="Green Sea" style="background-color: #1abc9c;">
+                </a>
+            </li>
+            <li>
+                <a class="skin-changer" data-skin="theme-amethyst" data-toggle="tooltip" title="Amethyst" style="background-color: #9b59b6;">
+                </a>
+            </li>
+            <li>
+                <a class="skin-changer" data-skin="theme-blue" data-toggle="tooltip" title="Blue" style="background-color: #2980b9;">
+                </a>
+            </li>
+            <li>
+                <a class="skin-changer" data-skin="theme-red" data-toggle="tooltip" title="Red" style="background-color: #e74c3c;">
+                </a>
+            </li>
+            <li>
+                <a class="skin-changer" data-skin="theme-whbl" data-toggle="tooltip" title="White/Blue" style="background-color: #3498db;">
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="{{ asset('js/demo-skin-changer.js') }}"></script>
+<script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ asset('js/jquery.nanoscroller.min.js') }}"></script>
+<script src="{{ asset('js/demo.js') }}"></script>
+
+{#DEL FORM ELEMENT#}
+<script src="{{  asset('js/jquery.maskedinput.min.js')}}"></script>
+<script src="{{  asset('js/bootstrap-datepicker.js')}}"></script>
+<script src="{{  asset('js/moment.min.js')}}"></script>
+<script src="{{  asset('js/daterangepicker.js')}}"></script>
+<script src="{{  asset('js/bootstrap-timepicker.min.js')}}"></script>
+<script src="{{  asset('js/select2.min.js')}}"></script>
+<script src="{{  asset('js/hogan.js')}}"></script>
+<script src="{{  asset('js/typeahead.min.js')}}"></script>
+<script src="{{  asset('js/jquery.pwstrength.js')}}"></script>
+
+{#DEL FORM-DROPZONE#}
+{#<script src="js/dropzone.js"></script>#}
+
+<script src="{{ asset('js/scripts.js') }}"></script>
+<script src="{{  asset('js/pace.min.js')}}"></script>{#DEL FORM ELEMENT#}
+
+{#DEL FORM ELEMENT#}
+<script>
+    $(function($) {
+        //tooltip init
+        $('#exampleTooltip').tooltip();
+
+        //nice select boxes
+        $('#sel2').select2();
+
+        $('#sel2Multi').select2({
+            placeholder: 'Select a Country',
+            allowClear: true
+        });
+
+        //masked inputs
+        $("#gatorno_frontedbundle_cliente_fechaDeIngreso").mask("99/99/9999");
+        $("#maskedPhone").mask("(999) 999-9999");
+        $("#maskedPhoneExt").mask("(999) 999-9999? x99999");
+        $("#maskedTax").mask("99-9999999");
+        $("#maskedSsn").mask("999-99-9999");
+
+        $("#maskedProductKey").mask("a*-999-a999",{placeholder:" ",completed:function(){alert("You typed the following: "+this.val());}});
+
+        $.mask.definitions['~']='[+-]';
+        $("#maskedEye").mask("~9.99 ~9.99 999");
+
+        //datepicker
+        $('#datepickerDate').datepicker({
+            format: 'mm-dd-yyyy'
+        });
+
+        $('#datepickerDateComponent').datepicker();
+
+        //daterange picker
+        $('#datepickerDateRange').daterangepicker();
+
+        //timepicker
+        $('#timepicker').timepicker({
+            minuteStep: 5,
+            showSeconds: true,
+            showMeridian: false,
+            disableFocus: false,
+            showWidget: true
+        }).focus(function() {
+                    $(this).next().trigger('click');
+                });
+
+        //autocomplete simple
+        $('#exampleAutocompleteSimple').typeahead({
+            prefetch: '/data/countries.json',
+            limit: 10
+        });
+        {#
+             //autocomplete with templating
+             $('#exampleAutocomplete').typeahead({
+                 name: 'twitter-oss',
+                 prefetch: '/data/repos.json',
+                 template: [
+                     '<p class="repo-language">{{language}}</p>',
+                     '<p class="repo-name">{{name}}</p>',
+                     '<p class="repo-description">{{description}}</p>'
+                 ].join(''),
+                 engine: Hogan
+             });
+     #}
+        //password strength meter
+        $('#examplePwdMeter').pwstrength({
+            label: '.pwdstrength-label'
+        });
+
+    });
+</script>
+
+</body>
+</html>

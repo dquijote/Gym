@@ -1,0 +1,27 @@
+security:
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        frontend:
+            pattern: ^/
+            anonymous: ~
+            form_login:
+                login_path: fronted_login
+                check_path: usuario_login_check
+            logout:
+                path: usuario_logout
+                target: /login
+                invalidate_session: false
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/public/*, roles: [ROLE_USUARIO, ROLE_ADMIN]  }
+        - { path: ^/admin/*, roles: ROLE_ADMIN  }
+        #- { path: ^/usuario/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }#ROLE_USUARIO
+        #- { path: ^/usuario/*, roles: ROLE_USUARIO }
+    providers:
+        usuarios:
+            entity: { class: Gatorno\FrontedBundle\Entity\appUser, property: nombre }
+    encoders:
+        Gatorno\FrontedBundle\Entity\appUser: plaintext #{ algorithm: sha512, iterations: 10 }

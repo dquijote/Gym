@@ -1,0 +1,30 @@
+cargo:
+    path:     /
+    defaults: { _controller: "FrontedBundle:Cargo:index" }
+
+cargo_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:Cargo:show" }
+
+cargo_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:Cargo:new" }
+
+cargo_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:Cargo:create" }
+    requirements: { _method: post }
+
+cargo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:Cargo:edit" }
+
+cargo_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:Cargo:update" }
+    requirements: { _method: post|put }
+
+cargo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:Cargo:delete" }
+

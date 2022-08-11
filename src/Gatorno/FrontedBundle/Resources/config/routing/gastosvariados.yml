@@ -1,0 +1,37 @@
+gastos_variados:
+    path:     /
+    defaults: { _controller: "FrontedBundle:GastosVariados:index" }
+
+gastos_variados_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:GastosVariados:show" }
+
+gastos_variados_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:GastosVariados:new" }
+
+gastos_variados_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:GastosVariados:create" }
+    requirements: { _method: post }
+
+gastos_variados_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:GastosVariados:edit" }
+
+gastos_variados_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:GastosVariados:update" }
+    requirements: { _method: post|put }
+
+gastos_variados_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:GastosVariados:delete" }
+
+gastos_variados_search:
+    path:     /buscar
+    defaults: { _controller: "FrontedBundle:GastosVariados:search" }
+
+gastos_variados_search_rusult:
+    path:     /buscar/resultado
+    defaults: { _controller: "FrontedBundle:GastosVariados:search_result" }

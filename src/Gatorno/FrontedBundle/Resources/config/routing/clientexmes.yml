@@ -1,0 +1,34 @@
+cliente_mes:
+    path:     /
+    defaults: { _controller: "FrontedBundle:ClienteXMes:index" }
+
+cliente_mes_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:ClienteXMes:show" }
+
+cliente_mes_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:ClienteXMes:new" }
+
+cliente_mes_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:ClienteXMes:create" }
+    requirements: { _method: post }
+
+cliente_mes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:ClienteXMes:edit" }
+
+cliente_mes_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:ClienteXMes:update" }
+    requirements: { _method: post|put }
+
+cliente_mes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:ClienteXMes:delete" }
+    requirements: { _method: post|delete }
+
+cliente_mes_buscar:
+    path:     /buscar
+    defaults: { _controller: "FrontedBundle:ClienteXMes:buscarAnnoClienteXmes" }

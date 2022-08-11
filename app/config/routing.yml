@@ -1,0 +1,25 @@
+fronted:
+    resource: "@FrontedBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+fronted_public:
+    resource: "@FrontedBundle/Resources/config/secretaria.yml"
+    prefix:   /public
+
+pruebas:
+    resource: "@FrontedBundle/Resources/config/pruebas.yml"
+    prefix:   /p
+
+fronted_redirec:
+    path:    /
+    defaults: { _controller: FrontedBundle:Default:redirec }
+
+fronted_login:
+    path:    /login
+    defaults: { _controller: FrontedBundle:Default:login }
+
+usuario_login_check:
+    path: /login_check
+
+usuario_logout:
+    path: /logout

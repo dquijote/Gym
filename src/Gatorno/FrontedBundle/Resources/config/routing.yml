@@ -1,0 +1,81 @@
+fronted_cliente_mes:
+    resource: "@FrontedBundle/Resources/config/routing/clientexmes.yml"
+    prefix:   /cliente/mes
+
+fronted_count_dia:
+    resource: "@FrontedBundle/Resources/config/routing/fakeclientedia.yml"
+    prefix:   /count/dia
+
+fronted_count:
+    resource: "@FrontedBundle/Resources/config/routing/fakeclientemes.yml"
+    prefix:   /count
+
+fronted_pagosClientes:
+    resource: "@FrontedBundle/Resources/config/routing/pago.yml"
+    prefix:   /pagosClientes
+
+fronted_cliente:
+    resource: "@FrontedBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+
+fronted_user:
+    resource: "@FrontedBundle/Resources/config/routing/appuser.yml"
+    prefix:   /user
+
+fronted_cargo:
+    resource: "@FrontedBundle/Resources/config/routing/cargo.yml"
+    prefix:   /cargo
+
+fronted_tipo_cliente:
+    resource: "@FrontedBundle/Resources/config/routing/tipoclientes.yml"
+    prefix:   /tipocliente
+
+fronted_trabajador:
+    resource: "@FrontedBundle/Resources/config/routing/trabajador.yml"
+    prefix:   /trabajador
+
+fronted_gastos_variados:
+    resource: "@FrontedBundle/Resources/config/routing/gastosvariados.yml"
+    prefix:   /gastos/variados
+
+fronted_gastos_pagos_trabajador:
+    resource: "@FrontedBundle/Resources/config/routing/pagotrabajador.yml"
+    prefix:   /gastos/pagotrabajador
+
+fronted_pagos_clientes:
+    resource: "@FrontedBundle/Resources/config/routing/pagosclientes.yml"
+    prefix:   /pagos/clientes
+
+fronted_homepage:
+    path:    /
+    defaults: { _controller: FrontedBundle:Default:index }
+
+fronted_form:
+    path:    /form
+    defaults: { _controller: FrontedBundle:Default:form }
+
+
+fronted_tareas:
+    path:    /tareas
+    defaults: { _controller: FrontedBundle:Default:tareas }
+
+fronted_tareasSave:
+    path:    /tareasSave
+    defaults: { _controller: FrontedBundle:Default:tareasSave }
+
+fronted_nueva_tareas:
+    path:    /nueva/tareas
+    defaults: { _controller: FrontedBundle:Default:nuevaTareas }
+
+fronted_editar_tareas:
+    path:    /editar/tareas/{id}
+    defaults: { _controller: FrontedBundle:Default:editarTareas }
+
+fronted_editar_tareasSave:
+    path:    /editar/tareasSave/{id}
+    defaults: { _controller: FrontedBundle:Default:editarTareasSave }
+
+
+fronted_eliminar_tareas:
+    path:    /eliminar/tareas/{id}
+    defaults: { _controller: FrontedBundle:Default:eliminarTareas }

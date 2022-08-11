@@ -1,0 +1,84 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Instructores
+ * Date: 8/12/15
+ * Time: 15:48
+ */
+/**
+ * Created by PhpStorm.
+ * User: MaiteFelipe
+ * Date: 24/09/15
+ * Time: 18:45
+ */
+
+
+namespace Gatorno\FrontedBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ *
+ *
+ * @ORM\Table()
+ * @ORM\Entity()
+ */
+class Trabajador {
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    public function __toString()
+    {
+       return $this->getNombre() ;
+    }
+
+
+    /**
+     *@ORM\ManyToOne(targetEntity="Gatorno\FrontedBundle\Entity\Cargo")
+     *
+     */
+    private $cargo;
+
+    /**
+     *
+     *@ORM\Column(type="date")
+     */
+    private $fechaDeIngreso;
+
+    /**
+     *
+     *@ORM\Column(type="date")
+     */
+    private $fechaDePago;
+
+    /**
+     *@ORM\Column( type="string")
+     */
+    private $nombre;
+    /**
+     *@ORM\Column( type="string")
+     */
+    private $apellidos;
+
+
+    /**
+     *@ORM\Column(type="string")
+     */
+    private $sexo;
+
+
+    /**
+     *@ORM\Column(type="string")
+     */
+    private $fotoRuta;
+
+
+    
+   }

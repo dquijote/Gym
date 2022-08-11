@@ -1,0 +1,30 @@
+tipo_cliente:
+    path:     /
+    defaults: { _controller: "FrontedBundle:TipoCliente:index" }
+
+tipo_cliente_show:
+    path:     /{id}/show
+    defaults: { _controller: "FrontedBundle:TipoCliente:show" }
+
+tipo_cliente_new:
+    path:     /new
+    defaults: { _controller: "FrontedBundle:TipoCliente:new" }
+
+tipo_cliente_create:
+    path:     /create
+    defaults: { _controller: "FrontedBundle:TipoCliente:create" }
+    requirements: { _method: post }
+
+tipo_cliente_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FrontedBundle:TipoCliente:edit" }
+
+tipo_cliente_update:
+    path:     /{id}/update
+    defaults: { _controller: "FrontedBundle:TipoCliente:update" }
+    requirements: { _method: post|put }
+
+tipo_cliente_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FrontedBundle:TipoCliente:delete" }
+

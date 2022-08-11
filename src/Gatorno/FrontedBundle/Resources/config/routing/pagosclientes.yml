@@ -1,0 +1,10 @@
+pagos_clientes_index:
+    path:     /
+    defaults: { _controller: "FrontedBundle:PagosClientes:index" }
+
+pagos_clientes_buscar:
+    path:     /buscarFecha
+    defaults: { _controller: "FrontedBundle:PagosClientes:buscarFecha" }
+
+
+
