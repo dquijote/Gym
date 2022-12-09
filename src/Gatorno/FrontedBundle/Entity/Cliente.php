@@ -64,11 +64,11 @@ class Cliente {
      */
     private $fechaDeIngreso;
 
-    /**
-     *
-     *@ORM\Column(type="date")
-     */
-    private $fechaDePago;
+//    /**
+//     *
+//     *@ORM\Column(type="date")
+//     */
+//    private $fechaDePago;
 
     /**
      *@ORM\Column( type="string")
@@ -90,15 +90,15 @@ class Cliente {
      */
     private $sexo;
 
-    /**
-     *@ORM\Column(type="string")
-     */
-    private $servicio;
-
-    /**
-     *@ORM\Column(type="integer")
-     */
-    private $costoDeservicio;
+//    /**
+//     * @ORM\ManyToOne(targetEntity="Gatorno\FrontedBundle\Entity\ServCliente")
+//     */
+//    private $servicio;
+//
+//    /**
+//     *@ORM\Column(type="integer")
+//     */
+//    private $costoDeservicio;
 
     /**
      *@ORM\Column(type="string")
@@ -190,28 +190,28 @@ class Cliente {
         return $this->fechaDeIngreso;
     }
 
-    /**
-     * Set fechaDePago
-     *
-     * @param \DateTime $fechaDePago
-     * @return Cliente
-     */
-    public function setFechaDePago($fechaDePago)
-    {
-        $this->fechaDePago = $fechaDePago;
+//    /**
+//     * Set fechaDePago
+//     *
+//     * @param \DateTime $fechaDePago
+//     * @return Cliente
+//     */
+//    public function setFechaDePago($fechaDePago)
+//    {
+//        $this->fechaDePago = $fechaDePago;
+//
+//        return $this;
+//    }
 
-        return $this;
-    }
-
-    /**
-     * Get fechaDePago
-     *
-     * @return \DateTime 
-     */
-    public function getFechaDePago()
-    {
-        return $this->fechaDePago;
-    }
+//    /**
+//     * Get fechaDePago
+//     *
+//     * @return \DateTime
+//     */
+//    public function getFechaDePago()
+//    {
+//        return $this->fechaDePago;
+//    }
 
     /**
      * Set nombre
@@ -305,51 +305,51 @@ class Cliente {
         return $this->sexo;
     }
 
-    /**
-     * Set servicio
-     *
-     * @param string $servicio
-     * @return Cliente
-     */
-    public function setServicio($servicio)
-    {
-        $this->servicio = $servicio;
+//    /**
+//     * Set servicio
+//     *
+//     * @param string $servicio
+//     * @return Cliente
+//     */
+//    public function setServicio($servicio)
+//    {
+//        $this->servicio = $servicio;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get servicio
+//     *
+//     * @return string
+//     */
+//    public function getServicio()
+//    {
+//        return $this->servicio;
+//    }
 
-        return $this;
-    }
-
-    /**
-     * Get servicio
-     *
-     * @return string 
-     */
-    public function getServicio()
-    {
-        return $this->servicio;
-    }
-
-    /**
-     * Set costoDeservicio
-     *
-     * @param integer $costoDeservicio
-     * @return Cliente
-     */
-    public function setCostoDeservicio($costoDeservicio)
-    {
-        $this->costoDeservicio = $costoDeservicio;
-
-        return $this;
-    }
-
-    /**
-     * Get costoDeservicio
-     *
-     * @return integer 
-     */
-    public function getCostoDeservicio()
-    {
-        return $this->costoDeservicio;
-    }
+//    /**
+//     * Set costoDeservicio
+//     *
+//     * @param integer $costoDeservicio
+//     * @return Cliente
+//     */
+//    public function setCostoDeservicio($costoDeservicio)
+//    {
+//        $this->costoDeservicio = $costoDeservicio;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get costoDeservicio
+//     *
+//     * @return integer
+//     */
+//    public function getCostoDeservicio()
+//    {
+//        return $this->costoDeservicio;
+//    }
 
     /**
      * Set fotoRuta

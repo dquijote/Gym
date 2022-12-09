@@ -20,10 +20,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * This service is to customer and is do for a worker
- *
+ * @ORM\Entity
  * @ORM\Table()
- * @ORM\Entity(repositoryClass = "Gatorno\FrontedBundle\Repository\SuppyRepository")
+ *
  */
+//@ORM\Entity(repositoryClass = "Gatorno\FrontedBundle\Repository\SuppyRepository")
 class Supply {
 
     /**

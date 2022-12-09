@@ -19,9 +19,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * This service is to customer and is do for a worker
+ * @ORM\Entity
  *
- * @ORM\Table()
  */
+//@ORM\Table()
 class ServCliente {
 
     /**

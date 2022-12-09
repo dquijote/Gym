@@ -184,6 +184,14 @@
                                      'placeholder':''}
                                      }) }}
                                  </div>
+                                    {{ form_errors(formulario.servicio) }}
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-star"></i></span>
+                                        {{ form_widget(formulario.servicio,{'attr':
+                                            {'class' : 'form-control',
+                                                'placeholder':''}
+                                        }) }}
+                                    </div>
                                     {#
                                         {{ form_errors(formulario.costoDeservicio) }}
                                         <div class="form-group">

@@ -20,10 +20,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * This service is to customer and is do for a worker
- *
+ * @ORM\Entity
  * @ORM\Table()
- * @ORM\Entity(repositoryClass = "Gatorno\FrontedBundle\Repository\ServiceRepository")
+
  */
+//* @ORM\Entity(repositoryClass = "Gatorno\FrontedBundle\Repository\ServiceRepository")
 class Service {
 
     /**
@@ -40,15 +41,15 @@ class Service {
      */
     public function __toString()
     {
-       return $this->service;
+       return $this->getService();
     }
 
 
-    /**
-     * Customer that receive the service
-     * @ORM\ManyToOne(targetEntity="Gatorno\FrontedBundle\Entity\Cliente")
-     */
-    private $cliente;
+//    /**
+//     * Customer that receive the service
+//     * @ORM\ManyToOne(targetEntity="Gatorno\FrontedBundle\Entity\ServCliente")
+//     */
+//    private $cliente;
 
     /**
      * Name of the service
@@ -61,6 +62,18 @@ class Service {
      * @ORM\Column(type="integer")
      */
     private $cost;
+
+    /**
+     * Period to pay the service
+     * @ORM\Column(type="integer")
+     */
+    private $amountPeriod;
+
+    /**
+     * Period to pay the service (year, month, day, week )
+     * @ORM\Column(type="string")
+     */
+    private $period;
 
     /**
      * Worker that provide the service
@@ -233,5 +246,51 @@ class Service {
     public function getSupply()
     {
         return $this->supply;
+    }
+
+    /**
+     * Set amountPeriod
+     *
+     * @param integer $amountPeriod
+     * @return Service
+     */
+    public function setAmountPeriod($amountPeriod)
+    {
+        $this->amountPeriod = $amountPeriod;
+
+        return $this;
+    }
+
+    /**
+     * Get amountPeriod
+     *
+     * @return integer 
+     */
+    public function getAmountPeriod()
+    {
+        return $this->amountPeriod;
+    }
+
+    /**
+     * Set period
+     *
+     * @param string $period
+     * @return Service
+     */
+    public function setPeriod($period)
+    {
+        $this->period = $period;
+
+        return $this;
+    }
+
+    /**
+     * Get period
+     *
+     * @return string 
+     */
+    public function getPeriod()
+    {
+        return $this->period;
     }
 }

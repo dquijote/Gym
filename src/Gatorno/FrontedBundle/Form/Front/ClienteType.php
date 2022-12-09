@@ -21,11 +21,11 @@ class ClienteType extends AbstractType
            // ->add('fechaDePago','text')
             ->add('nombre','text')
             ->add('apellidos','text')
-            ->add('tipo','choice', array('choices'=>array(
-                'Full'=>'Full',
-                'MP'=>'Mitad de Precio',
-                'VIP'=>'VIP',
-            )))
+//            ->add('tipo','choice', array('choices'=>array(
+//                'Full'=>'Full',
+//                'MP'=>'Mitad de Precio',
+//                'VIP'=>'VIP',
+//            )))
             ->add('tipo','entity',array(
                 'class'=>'FrontedBundle:TipoCliente',
                 'property' => 'tipo',
@@ -39,7 +39,14 @@ class ClienteType extends AbstractType
 //                }
             ))
             ->add('sexo','choice', array('choices'=>array('Masculino'=>'Masculino','Femenino'=>'Femenino')))
-           // ->add('servicio')
+            ->add('servicio','entity', array(
+                'class'=>'FrontedBundle:Service',
+//                'property' => 'servicio',
+                'empty_value' => 'Selecciona un servicio',
+                'multiple'  => true,
+                'mapped' => false,
+
+            ) )
             ->add('foto','file', array('required'=>false))
            // ->add('costoDeservicio','choice', array('choices'=>array('0'=>0,'3'=>3,'6'=>6)))
         ;

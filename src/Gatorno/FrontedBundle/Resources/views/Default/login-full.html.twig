@@ -97,7 +97,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1418570549,byc:0,owlid
                                                    <img style="width: 60%;height: 10%" src="{{ asset('uploads/images/' ~ clienteBuscado.fotoRuta) }}" alt="" class="img-rounded profile-img img-responsive center-block"/>
 
                                                    <div style="text-align: center;margin-top: 1%" class="profile-label">
-                                                       <span class="label label-danger">{{  clienteBuscado.tipo }}: $ {{ clienteBuscado.costoDeservicio }}</span>
+                                                       <span class="label label-danger">{{  clienteBuscado.tipo }}: $ </span>
                                                    </div>
                                                    {#
                                                    <div class="profile-stars">
@@ -113,7 +113,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1418570549,byc:0,owlid
                                                        <div class="row">
                                                            <div class="col-lg-8" >
                                                                Miembro desde: {{ clienteBuscado.fechaDeIngreso | date('Y/m/d') }}<br>
-                                                               Fecha de pago: <a href="{{ path('fronted_cambiar_fecha_pago',{'id':clienteBuscado.id}) }}" title="Cambiar Fecha de Pago">   {{ clienteBuscado.fechaDePago | date('Y/m/d')}}</a>
+                                                               Fecha de pago: <a href="{{ path('fronted_cambiar_fecha_pago',{'id':clienteBuscado.id}) }}" title="Cambiar Fecha de Pago">   </a> {# {{ clienteBuscado.fechaDePago | date('Y/m/d')}} #}
                                                             </div>
                                                        {#
                                                        <a href="" class="table-link">
@@ -122,14 +122,14 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1418570549,byc:0,owlid
                                                             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                             </span>
                                                        </a>#}
-                                                           {% if clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now + 3 day') and clienteBuscado.fechaDePago >= date('now - 3 day') %}
-                                                               {% set class = 'success' %}
-                                                           {% elseif clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now - 3 day') and clienteBuscado.fechaDePago >= date('now - 7 day') %}
-                                                               {% set class = 'warning' %}
-                                                           {% elseif clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now - 7 day') %}
-                                                               {% set class = 'danger' %}
-                                                           {% endif %}
-                                                           {% if clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now + 3 day')  %}{#clientePago is empty and#}
+                                                           {#{% if clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now + 3 day') and clienteBuscado.fechaDePago >= date('now - 3 day') %}#}
+                                                               {#{% set class = 'success' %}#}
+                                                           {#{% elseif clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now - 3 day') and clienteBuscado.fechaDePago >= date('now - 7 day') %}#}
+                                                               {#{% set class = 'warning' %}#}
+                                                           {#{% elseif clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now - 7 day') %}#}
+                                                               {#{% set class = 'danger' %}#}
+                                                           {#{% endif %}#}
+                                                           {#{% if clienteBuscado is defined and clienteBuscado.fechaDePago <= date('now + 3 day')  %}#}{#clientePago is empty and#}
                                                               {#Del form-element#}
                                                                <div class="col-lg-4">
                                                                    <form action="{{ path('fronted_pagar_cliente',{'id':clienteBuscado.id}) }}">
@@ -142,7 +142,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1418570549,byc:0,owlid
                                                                                </label>
                                                                            </div>
                                                                        </div>#}
-                                                                       <button type="submit" class="btn btn-{{ class }}"><i class="fa fa-check-square"></i> Pagar</button>
+                                                                       <button type="submit" class="btn btn-"><i class="fa fa-check-square"></i> Pagar</button>
                                                                    </form>
                                                                 </div>
                                                            {% endif %}
@@ -152,7 +152,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1418570549,byc:0,owlid
 
                                                </div>
 
-                                            {% elseif noEncontrado is defined and noEncontrado == false %}
+                                            {#{% elseif noEncontrado is defined and noEncontrado == false %}#}
 
                                             <header class="main-box-header clearfix">
                                                 <h2 style="text-align: center">Scarlett Johansson</h2>
@@ -180,7 +180,7 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1418570549,byc:0,owlid
                                                     Fecha de Pago: 1/1/2100
                                                 </div>
                                             </div>
-                                           {% endif %}
+                                           {#{% endif %}#}
                                         </div>
                                         {#fin del user profile#}
 

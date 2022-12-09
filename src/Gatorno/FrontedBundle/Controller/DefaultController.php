@@ -4,6 +4,7 @@ namespace Gatorno\FrontedBundle\Controller;
 
 use Gatorno\FrontedBundle\Entity\Cliente;
 use Gatorno\FrontedBundle\Entity\Pago;
+use Gatorno\FrontedBundle\Entity\ServCliente;
 use Gatorno\FrontedBundle\Entity\Tarea;
 use Gatorno\FrontedBundle\Entity\Visita;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -1012,49 +1013,22 @@ class DefaultController extends Controller
             $entityPago = new Pago();
            // $fechaIngreso = $formWeb['fechaDeIngreso'];
             $tipCliente = $formWeb['tipo'];
-           // $fechaPago = $formWeb['fechaDePago'];
-
+            $servicio = $formWeb['servicio'];
+var_dump($servicio);
             //Buscando el pago por el tipo de cliente
             $pago = $em->getRepository('FrontedBundle:TipoCliente')->find($tipCliente)->getImporte();
             $tiposClientes = $em->getRepository('FrontedBundle:TipoCliente')->findAll();
-            //var_dump($tiposClientes);
-            //var_dump($tipCliente);
-//            foreach ($tiposClientes as $tp)
-//            {
-//                if($tp->getTipo() == $tipCliente)
-//                    $pago = $tp->getImporte();
-//
-//
-//            }
-
-
-
-//
-//            //Estableciendo el pago por tipo de cliente.
-//            if($tipCliente == 'VIP')
-//            {
-//                $pago = 0.00;
-//            }
-//             if($tipCliente == 'MP')
-//             {
-//                 $pago = 3.00;
-//             }
-//             if($tipCliente == 'Full')
-//             {
-//                 $pago = 6.00;
-//             }
 
             $intervalo = new \DateInterval($this->periodoCobro('m'));
             $time = new \DateTime('now');
             $time->add($intervalo);
 
             $entityCliente->setFechaDeIngreso(new \DateTime('now'));
-            $entityCliente->setFechaDePago($time);
-            $entityCliente->setCostoDeservicio($pago);
-            $entityCliente->setServicio('Gym');
             $entityCliente->setClave($this->generarClave());
             if($formulario->get('foto')->getData() == null)
                 $entityCliente->setFotoRuta('asdfghjkjkkjgh');
+
+
 
 
             // $tienda = $this->get('security.context')->getToken()->getUser();
@@ -1082,6 +1056,34 @@ class DefaultController extends Controller
 
             $em->flush();
 
+            // Insert the service chosen for the customer
+            $servElected = array();
+            $countServ = 0;
+            foreach ($servicio as $item){
+                $servCliente = new ServCliente();
+                $addDate = new \DateInterval("P0Y"); //P7Y5M4DT4H3M2S
+                $serv = $em->getRepository('FrontedBundle:Service')->find($item);
+                // list of service to send to view
+                $countServ ++;
+                $servElected[$countServ] = $serv;
+                if ($serv->getPeriod() == "year")
+                    $addDate = new \DateInterval("P".$serv->getAmountPeriod()."Y");
+                if ($serv->getPeriod() == "month")
+                    $addDate = new \DateInterval("P".$serv->getAmountPeriod()."M");
+                if ($serv->getPeriod() == "day")
+                    $addDate = new \DateInterval("P".$serv->getAmountPeriod()."D");
+                $servCliente->setCliente($entityCliente);
+                $servCliente->setService($serv);
+                $servCliente->setDateStart(new \DateTime("now"));
+                $now = new \DateTime("now");
+                $servCliente->setDatePay($now->add($addDate));
+                var_dump($now);
+
+                $em->persist($servCliente);
+
+            }
+            $em->flush();
+
             $this->get('session')->getFlashBag()->add('registrado',
                 '¡Se ha registrado! ');
 
@@ -1092,6 +1094,7 @@ class DefaultController extends Controller
             return $this->render('FrontedBundle:Default:login-full.html.twig',array(
                 'formulario'=>$formulario->createView(),
                 'clienteBuscado'=>$entityCliente,
+                "servElected"=>$servElected
             ));
 
         }
